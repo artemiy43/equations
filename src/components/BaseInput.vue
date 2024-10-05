@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+//import { ref } from "vue";
 
 defineProps<{ msg: string; num: Number }>();
 
@@ -9,6 +9,8 @@ const emits = defineEmits<{
   (e: "setCount", newValue: number): void;
 }>();
 //const count = ref(0);
+const handleInputChange = (event: Event): number =>
+  +(event.target as HTMLInputElement).value;
 </script>
 
 <template>
@@ -17,7 +19,7 @@ const emits = defineEmits<{
     <input
       type="number"
       :value="num"
-      @input="emits('setCount', $event.target.value)"
+      @input="emits('setCount', handleInputChange($event))"
       class="input"
     />
   </div>
