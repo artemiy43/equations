@@ -29,7 +29,7 @@ const emits = defineEmits<{
 }
 
 .input {
-  width: 50px;
+  width: 45px;
   height: 35px;
   font-size: 28px;
   font-weight: 600;
